@@ -1,0 +1,25 @@
+{
+    "bbillingApp": {
+        "accountAppHLD" : {
+            "home": {
+                "title": "AccountAppHLDs",
+                "createLabel": "Créer un nouveau AccountAppHLD",
+                "createOrEditLabel": "Créer ou éditer un AccountAppHLD"
+            },
+            "created": "Un nouveau AccountAppHLD a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AccountAppHLD avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AccountAppHLD avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AccountAppHLD {{ id }} ?"
+            },
+            "detail": {
+                "title": "AccountAppHLD"
+            },
+            "appHLDStartDate": "AppHLDStartDate",
+            "appHLDEndDate": "AppHLDEndDate",
+            "accounts": "Accounts",
+            "products": "Products"
+        }
+    }
+}
+

@@ -1,0 +1,92 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "countryName"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "customerID"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "customerAddType",
+            "fieldType": "CustomerAddressType",
+            "fieldValues": "PERMANENT, TEMPORARY, COMMUNICATION",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "customerAddLineOne",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "customerAddLineTwo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "customerCity",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "customerState",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "customerAddZip",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "20"
+        }
+    ],
+    "changelogDate": "20151031100906",
+    "dto": "mapstruct",
+    "pagination": "pagination"
+}

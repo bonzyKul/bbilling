@@ -1,0 +1,9 @@
+{
+    "bbillingApp": {
+        "PricingRateType" : {
+            "null": "",
+            "FLAT": "FLAT",
+            "PERCENTAGE": "PERCENTAGE"
+        }
+    }
+}

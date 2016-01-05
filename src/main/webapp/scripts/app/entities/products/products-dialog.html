@@ -1,0 +1,129 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myProductsLabel" translate="bbillingApp.products.home.createOrEditLabel">Create or edit a Products</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="products.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.products.productCode" for="field_productCode">ProductCode</label>
+            <input type="text" class="form-control" name="productCode" id="field_productCode"
+                    ng-model="products.productCode"
+                    required ng-minlength="1" ng-maxlength="20" />
+            <div ng-show="editForm.productCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.productCode.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.productCode.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.productCode.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.products.productShortName" for="field_productShortName">ProductShortName</label>
+            <input type="text" class="form-control" name="productShortName" id="field_productShortName"
+                    ng-model="products.productShortName"
+                    required ng-minlength="1" ng-maxlength="20" />
+            <div ng-show="editForm.productShortName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.productShortName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.productShortName.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.productShortName.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.products.productName" for="field_productName">ProductName</label>
+            <input type="text" class="form-control" name="productName" id="field_productName"
+                    ng-model="products.productName"
+                    required ng-minlength="1" ng-maxlength="255" />
+            <div ng-show="editForm.productName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.productName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.productName.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.productName.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.products.productStartDate" for="field_productStartDate">ProductStartDate</label>
+            <input type="date" class="form-control" name="productStartDate" id="field_productStartDate"
+                    ng-model="products.productStartDate"
+                    required />
+            <div ng-show="editForm.productStartDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.productStartDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.products.productEndDate" for="field_productEndDate">ProductEndDate</label>
+            <input type="date" class="form-control" name="productEndDate" id="field_productEndDate"
+                    ng-model="products.productEndDate"
+                    required />
+            <div ng-show="editForm.productEndDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.productEndDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.products.productStatus" for="field_productStatus">ProductStatus</label>
+            <select class="form-control" name="productStatus" ng-model="products.productStatus" id="field_productStatus" required>
+                <option value="Active" translate="bbillingApp.ProductStatus.Active">Active</option>
+                <option value="Inactive" translate="bbillingApp.ProductStatus.Inactive">Inactive</option>
+            </select>
+            <div ng-show="editForm.productStatus.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.productStatus.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="bbillingApp.products.productFamily" for="field_productFamily">productFamily</label>
+            <select class="form-control" id="field_productFamily" name="productFamily" ng-model="products.productFamilyId" ng-options="productFamily.id as productFamily.productFamilyDesc for productFamily in productfamilys">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

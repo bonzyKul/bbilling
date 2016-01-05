@@ -1,0 +1,10 @@
+{
+    "bbillingApp": {
+        "AccountType" : {
+            "null": "",
+            "CA": "CA",
+            "SA": "SA",
+            "OD": "OD"
+        }
+    }
+}

@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="bbillingApp.products.detail.title">Products</span> {{products.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.products.productCode">ProductCode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{products.productCode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.products.productShortName">ProductShortName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{products.productShortName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.products.productName">ProductName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{products.productName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.products.productStartDate">ProductStartDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{products.productStartDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.products.productEndDate">ProductEndDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{products.productEndDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.products.productStatus">ProductStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'bbillingApp.ProductStatus.' + products.productStatus}}">{{products.productStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.products.productFamily">productFamily</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="productFamily.detail({id:products.productFamilyId})">{{products.productFamilyProductFamilyDesc}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

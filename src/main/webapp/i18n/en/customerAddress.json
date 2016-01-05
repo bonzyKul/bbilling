@@ -1,0 +1,28 @@
+{
+    "bbillingApp": {
+        "customerAddress" : {
+            "home": {
+                "title": "CustomerAddresss",
+                "createLabel": "Create a new CustomerAddress",
+                "createOrEditLabel": "Create or edit a CustomerAddress"
+            },
+            "created": "A new CustomerAddress is created with identifier {{ param }}",
+            "updated": "A CustomerAddress is updated with identifier {{ param }}",
+            "deleted": "A CustomerAddress is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete CustomerAddress {{ id }}?"
+            },
+            "detail": {
+                "title": "CustomerAddress"
+            },
+            "customerAddType": "CustomerAddType",
+            "customerAddLineOne": "CustomerAddLineOne",
+            "customerAddLineTwo": "CustomerAddLineTwo",
+            "customerCity": "CustomerCity",
+            "customerState": "CustomerState",
+            "customerAddZip": "CustomerAddZip",
+            "country": "Country",
+            "customer": "Customer"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "bbillingApp": {
+        "CustomerType" : {
+            "null": "",
+            "STAFF": "STAFF",
+            "PREIMERE": "PREIMERE",
+            "PREIMERE_STAFF": "PREIMERE_STAFF",
+            "NORMAL": "NORMAL",
+            "WEALTH": "WEALTH",
+            "CORPORATE": "CORPORATE",
+            "INVESTMENT": "INVESTMENT"
+        }
+    }
+}

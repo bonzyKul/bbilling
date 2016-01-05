@@ -1,0 +1,40 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "accounts",
+            "otherEntityName": "accounts",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "accountFamily"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "accountFamilyCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "accountFamilyDesc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "255"
+        }
+    ],
+    "changelogDate": "20151031103527",
+    "dto": "mapstruct",
+    "pagination": "pagination"
+}

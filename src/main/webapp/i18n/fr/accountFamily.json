@@ -1,0 +1,24 @@
+{
+    "bbillingApp": {
+        "accountFamily" : {
+            "home": {
+                "title": "AccountFamilys",
+                "createLabel": "Créer un nouveau AccountFamily",
+                "createOrEditLabel": "Créer ou éditer un AccountFamily"
+            },
+            "created": "Un nouveau AccountFamily a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AccountFamily avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AccountFamily avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AccountFamily {{ id }} ?"
+            },
+            "detail": {
+                "title": "AccountFamily"
+            },
+            "accountFamilyCode": "AccountFamilyCode",
+            "accountFamilyDesc": "AccountFamilyDesc",
+            "accounts": "Accounts"
+        }
+    }
+}
+

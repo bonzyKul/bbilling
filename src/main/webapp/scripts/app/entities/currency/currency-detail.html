@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="bbillingApp.currency.detail.title">Currency</span> {{currency.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.currency.currencyCode">CurrencyCode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{currency.currencyCode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.currency.currencyDescription">CurrencyDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{currency.currencyDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.currency.country">country</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="country.detail({id:currency.countryId})">{{currency.countryCountryName}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

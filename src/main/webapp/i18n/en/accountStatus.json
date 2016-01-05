@@ -1,0 +1,13 @@
+{
+    "bbillingApp": {
+        "AccountStatus" : {
+            "null": "",
+            "ACTIVE": "ACTIVE",
+            "INACTIVE": "INACTIVE",
+            "DORMANT": "DORMANT",
+            "CLOSED": "CLOSED",
+            "OPENED": "OPENED",
+            "COLLECTION": "COLLECTION"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "bbillingApp": {
+        "CustomerStatus" : {
+            "null": "",
+            "Active": "Active",
+            "Inactive": "Inactive",
+            "Deceased": "Deceased"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "bbillingApp": {
+        "AccountLastBalType" : {
+            "null": "",
+            "CR": "CR",
+            "DR": "DR"
+        }
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "products",
+            "otherEntityName": "products",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "productCode"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "currency",
+            "otherEntityName": "currency",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "currencyCode"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "pricingTier",
+            "otherEntityName": "pricingTier",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "pricing"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "serviceCatalogue",
+            "otherEntityName": "serviceCatalogue",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "serviceCode"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "pricingType",
+            "fieldType": "PricingType",
+            "fieldValues": "FLAT_SIMPLE, UNIT_SIMPLE, UNIT_TIERED, UNIT_THRESHOLD, FLAT_THRESHOLD",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "pricingChargeAmount",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "pricingRateType",
+            "fieldType": "PricingRateType",
+            "fieldValues": "FLAT, PERCENTAGE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "pricingUnit",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "pricingStartDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "pricingEndDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "pricingUnitType",
+            "fieldType": "PricingUnitType",
+            "fieldValues": "VALUE, COUNT",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "pricingAmountType",
+            "fieldType": "PricingAmountType",
+            "fieldValues": "CR, DR",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "pricingForStaff",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "pricingTaxIndicator",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151101030616",
+    "dto": "mapstruct",
+    "pagination": "pagination"
+}

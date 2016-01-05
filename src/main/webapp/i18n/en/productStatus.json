@@ -1,0 +1,9 @@
+{
+    "bbillingApp": {
+        "ProductStatus" : {
+            "null": "",
+            "Active": "Active",
+            "Inactive": "Inactive"
+        }
+    }
+}

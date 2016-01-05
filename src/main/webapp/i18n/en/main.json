@@ -1,0 +1,19 @@
+{
+    "main": {
+        "title": "Welcome, BBilling!",
+        "subtitle": "This is your homepage",
+        "logged": {
+            "message": "You are logged in as user \"{{username}}\"."
+        },
+        "question": "If you have any question on BBilling:",
+        "link": {
+            "homepage": "BBilling homepage",
+            "stackoverflow": "BBilling on Stack Overflow",
+            "bugtracker": "BBilling bug tracker",
+            "chat": "BBilling public chat room",
+            "contact": "contact @BBilling on Twitter"
+        },
+        "like": "If you like BBilling, don't forget to give us a star on",
+        "github": "Github"
+    }
+}

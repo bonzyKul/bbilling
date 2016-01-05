@@ -1,0 +1,84 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "productFamily",
+            "otherEntityName": "productFamily",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "productFamilyDesc"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "serviceCatalogue",
+            "otherEntityName": "serviceCatalogue",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "products"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "productCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "productShortName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "productName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "productStartDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "productEndDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "productStatus",
+            "fieldType": "ProductStatus",
+            "fieldValues": "Active, Inactive",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151031091624",
+    "dto": "mapstruct",
+    "pagination": "pagination"
+}

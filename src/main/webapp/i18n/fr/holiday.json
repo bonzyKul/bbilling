@@ -1,0 +1,24 @@
+{
+    "bbillingApp": {
+        "holiday" : {
+            "home": {
+                "title": "Holidays",
+                "createLabel": "Créer un nouveau Holiday",
+                "createOrEditLabel": "Créer ou éditer un Holiday"
+            },
+            "created": "Un nouveau Holiday a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Holiday avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Holiday avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Holiday {{ id }} ?"
+            },
+            "detail": {
+                "title": "Holiday"
+            },
+            "holidayDate": "HolidayDate",
+            "holidayDesc": "HolidayDesc",
+            "country": "Country"
+        }
+    }
+}
+

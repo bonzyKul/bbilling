@@ -1,0 +1,23 @@
+{
+    "bbillingApp": {
+        "productFamily" : {
+            "home": {
+                "title": "ProductFamilys",
+                "createLabel": "Create a new ProductFamily",
+                "createOrEditLabel": "Create or edit a ProductFamily"
+            },
+            "created": "A new ProductFamily is created with identifier {{ param }}",
+            "updated": "A ProductFamily is updated with identifier {{ param }}",
+            "deleted": "A ProductFamily is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ProductFamily {{ id }}?"
+            },
+            "detail": {
+                "title": "ProductFamily"
+            },
+            "productFamilyCode": "ProductFamilyCode",
+            "productFamilyDesc": "ProductFamilyDesc",
+            "products": "Products"
+        }
+    }
+}

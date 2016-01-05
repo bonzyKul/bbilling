@@ -1,0 +1,182 @@
+
+<div>
+    <h2><span translate="bbillingApp.accounts.detail.title">Accounts</span> {{accounts.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountNumber">AccountNumber</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountNumber}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountType">AccountType</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'bbillingApp.AccountType.' + accounts.accountType}}">{{accounts.accountType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountOpenedDate">AccountOpenedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountOpenedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountClosedDate">AccountClosedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountClosedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountStatus">AccountStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'bbillingApp.AccountStatus.' + accounts.accountStatus}}">{{accounts.accountStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountCRTurnOver">AccountCRTurnOver</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountCRTurnOver}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountDRTurnOver">AccountDRTurnOver</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountDRTurnOver}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountAvailBal">AccountAvailBal</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountAvailBal}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountLedgerBal">AccountLedgerBal</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountLedgerBal}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountBalance">AccountBalance</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountBalance}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountLastBalType">AccountLastBalType</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'bbillingApp.AccountLastBalType.' + accounts.accountLastBalType}}">{{accounts.accountLastBalType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountTier">AccountTier</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'bbillingApp.AccountTier.' + accounts.accountTier}}">{{accounts.accountTier}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountChargingBal">AccountChargingBal</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{accounts.accountChargingBal}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.products">products</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="products.detail({id:accounts.productsId})">{{accounts.productsProductName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.branch">branch</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="branch.detail({id:accounts.branchId})">{{accounts.branchBranchName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.bank">bank</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="bank.detail({id:accounts.bankId})">{{accounts.bankBankName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.country">country</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="country.detail({id:accounts.countryId})">{{accounts.countryCountryName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.currency">currency</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="currency.detail({id:accounts.currencyId})">{{accounts.currencyCurrencyDescription}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.customer">customer</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="customer.detail({id:accounts.customerId})">{{accounts.customerCustomerID}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.accounts.accountFamily">accountFamily</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="accountFamily.detail({id:accounts.accountFamilyId})">{{accounts.accountFamilyAccountFamilyDesc}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

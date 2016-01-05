@@ -1,0 +1,9 @@
+{
+    "bbillingApp": {
+        "PricingAmountType" : {
+            "null": "",
+            "CR": "CR",
+            "DR": "DR"
+        }
+    }
+}

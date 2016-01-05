@@ -1,0 +1,152 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myCustomerAddressLabel" translate="bbillingApp.customerAddress.home.createOrEditLabel">Create or edit a CustomerAddress</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="customerAddress.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.customerAddress.customerAddType" for="field_customerAddType">CustomerAddType</label>
+            <select class="form-control" name="customerAddType" ng-model="customerAddress.customerAddType" id="field_customerAddType" required>
+                <option value="PERMANENT" translate="bbillingApp.CustomerAddressType.PERMANENT">PERMANENT</option>
+                <option value="TEMPORARY" translate="bbillingApp.CustomerAddressType.TEMPORARY">TEMPORARY</option>
+                <option value="COMMUNICATION" translate="bbillingApp.CustomerAddressType.COMMUNICATION">COMMUNICATION</option>
+            </select>
+            <div ng-show="editForm.customerAddType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.customerAddType.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.customerAddress.customerAddLineOne" for="field_customerAddLineOne">CustomerAddLineOne</label>
+            <input type="text" class="form-control" name="customerAddLineOne" id="field_customerAddLineOne"
+                    ng-model="customerAddress.customerAddLineOne"
+                    required ng-minlength="1" ng-maxlength="255" />
+            <div ng-show="editForm.customerAddLineOne.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.customerAddLineOne.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerAddLineOne.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerAddLineOne.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.customerAddress.customerAddLineTwo" for="field_customerAddLineTwo">CustomerAddLineTwo</label>
+            <input type="text" class="form-control" name="customerAddLineTwo" id="field_customerAddLineTwo"
+                    ng-model="customerAddress.customerAddLineTwo"
+                    required ng-minlength="1" ng-maxlength="255" />
+            <div ng-show="editForm.customerAddLineTwo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.customerAddLineTwo.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerAddLineTwo.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerAddLineTwo.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="255">
+                    This field cannot be longer than 255 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.customerAddress.customerCity" for="field_customerCity">CustomerCity</label>
+            <input type="text" class="form-control" name="customerCity" id="field_customerCity"
+                    ng-model="customerAddress.customerCity"
+                    required ng-minlength="1" ng-maxlength="100" />
+            <div ng-show="editForm.customerCity.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.customerCity.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerCity.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerCity.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.customerAddress.customerState" for="field_customerState">CustomerState</label>
+            <input type="text" class="form-control" name="customerState" id="field_customerState"
+                    ng-model="customerAddress.customerState"
+                    required ng-minlength="1" ng-maxlength="100" />
+            <div ng-show="editForm.customerState.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.customerState.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerState.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerState.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.customerAddress.customerAddZip" for="field_customerAddZip">CustomerAddZip</label>
+            <input type="text" class="form-control" name="customerAddZip" id="field_customerAddZip"
+                    ng-model="customerAddress.customerAddZip"
+                    required ng-minlength="1" ng-maxlength="20" />
+            <div ng-show="editForm.customerAddZip.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.customerAddZip.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerAddZip.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.customerAddZip.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="bbillingApp.customerAddress.country" for="field_country">country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="customerAddress.countryId" ng-options="country.id as country.countryName for country in countrys">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.customerAddress.customer" for="field_customer">customer</label>
+            <select class="form-control" id="field_customer" name="customer" ng-model="customerAddress.customerId" ng-options="customer.id as customer.customerID for customer in customers">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

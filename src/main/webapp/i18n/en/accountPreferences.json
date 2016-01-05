@@ -1,0 +1,30 @@
+{
+    "bbillingApp": {
+        "accountPreferences" : {
+            "home": {
+                "title": "AccountPreferencess",
+                "createLabel": "Create a new AccountPreferences",
+                "createOrEditLabel": "Create or edit a AccountPreferences"
+            },
+            "created": "A new AccountPreferences is created with identifier {{ param }}",
+            "updated": "A AccountPreferences is updated with identifier {{ param }}",
+            "deleted": "A AccountPreferences is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AccountPreferences {{ id }}?"
+            },
+            "detail": {
+                "title": "AccountPreferences"
+            },
+            "accountEStatement": "AccountEStatement",
+            "accountNotification": "AccountNotification",
+            "accountLvlBilling": "AccountLvlBilling",
+            "accountPrintStmt": "AccountPrintStmt",
+            "accountRewardSuppInd": "AccountRewardSuppInd",
+            "accountPackCnt": "AccountPackCnt",
+            "accountCFInd": "AccountCFInd",
+            "accountPNCS": "AccountPNCS",
+            "accountBillingDefault": "AccountBillingDefault",
+            "accounts": "Accounts"
+        }
+    }
+}

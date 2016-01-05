@@ -1,0 +1,122 @@
+<div>
+    <h2 translate="bbillingApp.accounts.home.title">Accountss</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="accounts.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="bbillingApp.accounts.home.createLabel">Create a new Accounts</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a Accounts</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="bbillingApp.accounts.accountNumber">AccountNumber</th>
+                    <th translate="bbillingApp.accounts.accountType">AccountType</th>
+                    <th translate="bbillingApp.accounts.accountOpenedDate">AccountOpenedDate</th>
+                    <th translate="bbillingApp.accounts.accountClosedDate">AccountClosedDate</th>
+                    <th translate="bbillingApp.accounts.accountStatus">AccountStatus</th>
+                    <th translate="bbillingApp.accounts.accountCRTurnOver">AccountCRTurnOver</th>
+                    <th translate="bbillingApp.accounts.accountDRTurnOver">AccountDRTurnOver</th>
+                    <th translate="bbillingApp.accounts.accountAvailBal">AccountAvailBal</th>
+                    <th translate="bbillingApp.accounts.accountLedgerBal">AccountLedgerBal</th>
+                    <th translate="bbillingApp.accounts.accountBalance">AccountBalance</th>
+                    <th translate="bbillingApp.accounts.accountLastBalType">AccountLastBalType</th>
+                    <th translate="bbillingApp.accounts.accountTier">AccountTier</th>
+                    <th translate="bbillingApp.accounts.accountChargingBal">AccountChargingBal</th>
+                    <th translate="bbillingApp.accounts.products">products</th>
+                    <th translate="bbillingApp.accounts.branch">branch</th>
+                    <th translate="bbillingApp.accounts.bank">bank</th>
+                    <th translate="bbillingApp.accounts.country">country</th>
+                    <th translate="bbillingApp.accounts.currency">currency</th>
+                    <th translate="bbillingApp.accounts.customer">customer</th>
+                    <th translate="bbillingApp.accounts.accountFamily">accountFamily</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="accounts in accountss track by accounts.id">
+                    <td><a ui-sref="accounts.detail({id:accounts.id})">{{accounts.id}}</a></td>
+                    <td>{{accounts.accountNumber}}</td>
+                    <td translate="{{'bbillingApp.AccountType.' + accounts.accountType}}">{{accounts.accountType}}</td>
+                        <td>{{accounts.accountOpenedDate | date:'mediumDate'}}</td>
+                        <td>{{accounts.accountClosedDate | date:'mediumDate'}}</td>
+                    <td translate="{{'bbillingApp.AccountStatus.' + accounts.accountStatus}}">{{accounts.accountStatus}}</td>
+                    <td>{{accounts.accountCRTurnOver}}</td>
+                    <td>{{accounts.accountDRTurnOver}}</td>
+                    <td>{{accounts.accountAvailBal}}</td>
+                    <td>{{accounts.accountLedgerBal}}</td>
+                    <td>{{accounts.accountBalance}}</td>
+                    <td translate="{{'bbillingApp.AccountLastBalType.' + accounts.accountLastBalType}}">{{accounts.accountLastBalType}}</td>
+                    <td translate="{{'bbillingApp.AccountTier.' + accounts.accountTier}}">{{accounts.accountTier}}</td>
+                    <td>{{accounts.accountChargingBal}}</td>
+                    <td>
+                        <a ui-sref="products.detail({id:accounts.productsId})">{{accounts.productsProductName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="branch.detail({id:accounts.branchId})">{{accounts.branchBranchName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="bank.detail({id:accounts.bankId})">{{accounts.bankBankName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="country.detail({id:accounts.countryId})">{{accounts.countryCountryName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="currency.detail({id:accounts.currencyId})">{{accounts.currencyCurrencyDescription}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="customer.detail({id:accounts.customerId})">{{accounts.customerCustomerID}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="accountFamily.detail({id:accounts.accountFamilyId})">{{accounts.accountFamilyAccountFamilyDesc}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="accounts.detail({id:accounts.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="accounts.edit({id:accounts.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="accounts.delete({id:accounts.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li ng-show="links['first'] >= 0" ng-click="loadPage(links['first'])"><a>&lt;&lt;</a></li>
+                <li ng-show="page > 0" ng-click="loadPage(links['prev'] || 0)"><a>&lt;</a></li>
+                <li ng-show="page > 1" ng-click="loadPage(page - 2)"><a>{{page - 1}}</a></li>
+                <li ng-show="page > 0" ng-click="loadPage(page - 1)"><a>{{page}}</a></li>
+                <li class="active"><a>{{page + 1}}</a></li>
+                <li ng-show="page < links['last']" ng-click="loadPage(page + 1)"><a>{{page + 2}}</a></li>
+                <li ng-show="page < links['last'] - 1" ng-click="loadPage(page + 2)"><a>{{page + 3}}</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a>&gt;</a></li>
+                <li ng-show="links['last'] > 0" ng-click="loadPage(links['last'])"><a>&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

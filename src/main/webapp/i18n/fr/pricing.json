@@ -1,0 +1,35 @@
+{
+    "bbillingApp": {
+        "pricing" : {
+            "home": {
+                "title": "Pricings",
+                "createLabel": "Créer un nouveau Pricing",
+                "createOrEditLabel": "Créer ou éditer un Pricing"
+            },
+            "created": "Un nouveau Pricing a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pricing avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pricing avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pricing {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pricing"
+            },
+            "pricingType": "PricingType",
+            "pricingChargeAmount": "PricingChargeAmount",
+            "pricingRateType": "PricingRateType",
+            "pricingUnit": "PricingUnit",
+            "pricingStartDate": "PricingStartDate",
+            "pricingEndDate": "PricingEndDate",
+            "pricingUnitType": "PricingUnitType",
+            "pricingAmountType": "PricingAmountType",
+            "pricingForStaff": "PricingForStaff",
+            "pricingTaxIndicator": "PricingTaxIndicator",
+            "products": "Products",
+            "currency": "Currency",
+            "pricingTier": "PricingTier",
+            "serviceCatalogue": "ServiceCatalogue"
+        }
+    }
+}
+

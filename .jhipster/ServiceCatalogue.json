@@ -1,0 +1,55 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "products",
+            "otherEntityName": "products",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "productName"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "pricing",
+            "otherEntityName": "pricing",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "serviceCatalogue"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "serviceCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "serviceDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "serviceStartDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "serviceEndDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151229063539",
+    "dto": "mapstruct",
+    "pagination": "pagination"
+}

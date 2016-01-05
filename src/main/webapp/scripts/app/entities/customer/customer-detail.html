@@ -1,0 +1,126 @@
+
+<div>
+    <h2><span translate="bbillingApp.customer.detail.title">Customer</span> {{customer.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerID">CustomerID</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerID}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerFName">CustomerFName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerFName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerMName">CustomerMName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerMName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerLName">CustomerLName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerLName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerStartDate">CustomerStartDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerStartDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerEndDate">CustomerEndDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerEndDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerStatus">CustomerStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'bbillingApp.CustomerStatus.' + customer.customerStatus}}">{{customer.customerStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerType">CustomerType</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'bbillingApp.CustomerType.' + customer.customerType}}">{{customer.customerType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerEmail">CustomerEmail</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerEmail}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerTelNo">CustomerTelNo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerTelNo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerMobileNo">CustomerMobileNo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{customer.customerMobileNo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.customerTier">CustomerTier</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'bbillingApp.CustomerTier.' + customer.customerTier}}">{{customer.customerTier}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="bbillingApp.customer.country">country</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="country.detail({id:customer.countryId})">{{customer.countryCountryName}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

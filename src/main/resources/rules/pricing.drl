@@ -1,0 +1,107 @@
+package com.barclays.bbilling
+
+import com.barclays.bbilling.Facts.Message;
+import com.barclays.bbilling.domain.Pricing;
+import com.barclays.bbilling.domain.enumeration.PricingRateType;
+import com.barclays.bbilling.domain.enumeration.PricingType;
+import com.barclays.bbilling.web.rest.dto.PricingDTO;
+import com.barclays.bbilling.service.ChargingService;
+import com.barclays.bbilling.Facts.PricingFact;
+
+dialect "mvel"
+
+rule "Simple_Flat"
+    agenda-group "FLAT_PRICING"
+    when
+        p : PricingDTO($pricingType : pricingType, $pricingRateType : pricingRateType)
+        PricingDTO($pricingType == PricingType.FLAT_SIMPLE, $pricingRateType == PricingRateType.FLAT)
+        PricingDTO(pricingChargeAmount > 0)
+    then
+        float chargeValue = p.getPricingChargeAmount().floatValue() * p.getPricingUnit();
+        System.out.println("=================================================================================================");
+        System.out.println("=================================================================================================");
+        System.out.println("Flat Simple type charge " + chargeValue + " " + p.getPricingType() );
+        System.out.println("=================================================================================================");
+        System.out.println("=================================================================================================");
+end
+
+
+rule "Simple_Percentage"
+    agenda-group "FLAT_PRICING"
+    when
+        p : PricingDTO($pricingType: pricingType, $pricingRateType: pricingRateType)
+        PricingDTO($pricingType == PricingType.FLAT_SIMPLE, $pricingRateType == PricingRateType.PERCENTAGE)
+    then
+        Float value = p.getPricingChargeAmount().floatValue() * (50/100);
+        System.out.println("=================================================================================================");
+        System.out.println("=================================================================================================");
+        System.out.println("Flat Simple Percentage Charge " + value);
+        System.out.println("=================================================================================================");
+        System.out.println("=================================================================================================");
+end
+
+rule "Pricing Unit Simple value Flat"
+    agenda-group "UNIT_SIMPLE"
+    when
+        eval(1==1)
+    then
+        System.out.println("This is unit simple pricing");
+end
+//
+//rule "pricing Unit Simple Value Percentage"
+//
+//    when
+//
+//    then
+//
+//end
+//
+//rule "pricing Unit Simple Count Flat"
+//
+//    when
+//
+//    then
+//
+//end
+//
+//rule "pricing Unit Simple Count Percentage"
+//
+//    when
+//
+//    then
+//
+//end
+//
+//rule "pricing Unit Tiered Value Flat"
+//
+//    when
+//
+//    then
+//
+//end
+//
+//rule "pricing Unit Tiered Value Percentage"
+//
+//    when
+//
+//    then
+//
+//end
+//
+//rule "pricing Unit Tiered Count Flat"
+//
+//    when
+//
+//    then
+//
+//end
+//
+//rule "pricing Unit Tiered Count Percentage"
+//
+//    when
+//
+//    then
+//
+//end
+
+

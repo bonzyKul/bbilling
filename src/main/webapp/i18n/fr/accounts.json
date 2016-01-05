@@ -1,0 +1,41 @@
+{
+    "bbillingApp": {
+        "accounts" : {
+            "home": {
+                "title": "Accountss",
+                "createLabel": "Créer un nouveau Accounts",
+                "createOrEditLabel": "Créer ou éditer un Accounts"
+            },
+            "created": "Un nouveau Accounts a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Accounts avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Accounts avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Accounts {{ id }} ?"
+            },
+            "detail": {
+                "title": "Accounts"
+            },
+            "accountNumber": "AccountNumber",
+            "accountType": "AccountType",
+            "accountOpenedDate": "AccountOpenedDate",
+            "accountClosedDate": "AccountClosedDate",
+            "accountStatus": "AccountStatus",
+            "accountCRTurnOver": "AccountCRTurnOver",
+            "accountDRTurnOver": "AccountDRTurnOver",
+            "accountAvailBal": "AccountAvailBal",
+            "accountLedgerBal": "AccountLedgerBal",
+            "accountBalance": "AccountBalance",
+            "accountLastBalType": "AccountLastBalType",
+            "accountTier": "AccountTier",
+            "accountChargingBal": "AccountChargingBal",
+            "products": "Products",
+            "branch": "Branch",
+            "bank": "Bank",
+            "country": "Country",
+            "currency": "Currency",
+            "customer": "Customer",
+            "accountFamily": "AccountFamily"
+        }
+    }
+}
+

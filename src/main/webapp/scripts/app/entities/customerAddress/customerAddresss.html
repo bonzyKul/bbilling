@@ -1,0 +1,88 @@
+<div>
+    <h2 translate="bbillingApp.customerAddress.home.title">CustomerAddresss</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="customerAddress.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="bbillingApp.customerAddress.home.createLabel">Create a new CustomerAddress</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a CustomerAddress</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="bbillingApp.customerAddress.customerAddType">CustomerAddType</th>
+                    <th translate="bbillingApp.customerAddress.customerAddLineOne">CustomerAddLineOne</th>
+                    <th translate="bbillingApp.customerAddress.customerAddLineTwo">CustomerAddLineTwo</th>
+                    <th translate="bbillingApp.customerAddress.customerCity">CustomerCity</th>
+                    <th translate="bbillingApp.customerAddress.customerState">CustomerState</th>
+                    <th translate="bbillingApp.customerAddress.customerAddZip">CustomerAddZip</th>
+                    <th translate="bbillingApp.customerAddress.country">country</th>
+                    <th translate="bbillingApp.customerAddress.customer">customer</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="customerAddress in customerAddresss track by customerAddress.id">
+                    <td><a ui-sref="customerAddress.detail({id:customerAddress.id})">{{customerAddress.id}}</a></td>
+                    <td translate="{{'bbillingApp.CustomerAddressType.' + customerAddress.customerAddType}}">{{customerAddress.customerAddType}}</td>
+                    <td>{{customerAddress.customerAddLineOne}}</td>
+                    <td>{{customerAddress.customerAddLineTwo}}</td>
+                    <td>{{customerAddress.customerCity}}</td>
+                    <td>{{customerAddress.customerState}}</td>
+                    <td>{{customerAddress.customerAddZip}}</td>
+                    <td>
+                        <a ui-sref="country.detail({id:customerAddress.countryId})">{{customerAddress.countryCountryName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="customer.detail({id:customerAddress.customerId})">{{customerAddress.customerCustomerID}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="customerAddress.detail({id:customerAddress.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="customerAddress.edit({id:customerAddress.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="customerAddress.delete({id:customerAddress.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li ng-show="links['first'] >= 0" ng-click="loadPage(links['first'])"><a>&lt;&lt;</a></li>
+                <li ng-show="page > 0" ng-click="loadPage(links['prev'] || 0)"><a>&lt;</a></li>
+                <li ng-show="page > 1" ng-click="loadPage(page - 2)"><a>{{page - 1}}</a></li>
+                <li ng-show="page > 0" ng-click="loadPage(page - 1)"><a>{{page}}</a></li>
+                <li class="active"><a>{{page + 1}}</a></li>
+                <li ng-show="page < links['last']" ng-click="loadPage(page + 1)"><a>{{page + 2}}</a></li>
+                <li ng-show="page < links['last'] - 1" ng-click="loadPage(page + 2)"><a>{{page + 3}}</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a>&gt;</a></li>
+                <li ng-show="links['last'] > 0" ng-click="loadPage(links['last'])"><a>&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

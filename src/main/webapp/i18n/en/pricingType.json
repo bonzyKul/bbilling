@@ -1,0 +1,12 @@
+{
+    "bbillingApp": {
+        "PricingType" : {
+            "null": "",
+            "FLAT_SIMPLE": "FLAT_SIMPLE",
+            "UNIT_SIMPLE": "UNIT_SIMPLE",
+            "UNIT_TIERED": "UNIT_TIERED",
+            "UNIT_THRESHOLD": "UNIT_THRESHOLD",
+            "FLAT_THRESHOLD": "FLAT_THRESHOLD"
+        }
+    }
+}

@@ -1,0 +1,144 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAccountPreferencesLabel" translate="bbillingApp.accountPreferences.home.createOrEditLabel">Create or edit a AccountPreferences</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="accountPreferences.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountEStatement" for="field_accountEStatement">AccountEStatement</label>
+            <input type="checkbox" class="form-control" name="accountEStatement" id="field_accountEStatement"
+                    ng-model="accountPreferences.accountEStatement"
+                     />
+            <div ng-show="editForm.accountEStatement.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountEStatement.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountNotification" for="field_accountNotification">AccountNotification</label>
+            <input type="checkbox" class="form-control" name="accountNotification" id="field_accountNotification"
+                    ng-model="accountPreferences.accountNotification"
+                     />
+            <div ng-show="editForm.accountNotification.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountNotification.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountLvlBilling" for="field_accountLvlBilling">AccountLvlBilling</label>
+            <input type="checkbox" class="form-control" name="accountLvlBilling" id="field_accountLvlBilling"
+                    ng-model="accountPreferences.accountLvlBilling"
+                     />
+            <div ng-show="editForm.accountLvlBilling.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountLvlBilling.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountPrintStmt" for="field_accountPrintStmt">AccountPrintStmt</label>
+            <input type="checkbox" class="form-control" name="accountPrintStmt" id="field_accountPrintStmt"
+                    ng-model="accountPreferences.accountPrintStmt"
+                     />
+            <div ng-show="editForm.accountPrintStmt.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountPrintStmt.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountRewardSuppInd" for="field_accountRewardSuppInd">AccountRewardSuppInd</label>
+            <input type="checkbox" class="form-control" name="accountRewardSuppInd" id="field_accountRewardSuppInd"
+                    ng-model="accountPreferences.accountRewardSuppInd"
+                     />
+            <div ng-show="editForm.accountRewardSuppInd.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountRewardSuppInd.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountPackCnt" for="field_accountPackCnt">AccountPackCnt</label>
+            <input type="number" class="form-control" name="accountPackCnt" id="field_accountPackCnt"
+                    ng-model="accountPreferences.accountPackCnt"
+                    required />
+            <div ng-show="editForm.accountPackCnt.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountPackCnt.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.accountPackCnt.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountCFInd" for="field_accountCFInd">AccountCFInd</label>
+            <input type="checkbox" class="form-control" name="accountCFInd" id="field_accountCFInd"
+                    ng-model="accountPreferences.accountCFInd"
+                     />
+            <div ng-show="editForm.accountCFInd.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountCFInd.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountPNCS" for="field_accountPNCS">AccountPNCS</label>
+            <input type="checkbox" class="form-control" name="accountPNCS" id="field_accountPNCS"
+                    ng-model="accountPreferences.accountPNCS"
+                     />
+            <div ng-show="editForm.accountPNCS.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountPNCS.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accountBillingDefault" for="field_accountBillingDefault">AccountBillingDefault</label>
+            <input type="checkbox" class="form-control" name="accountBillingDefault" id="field_accountBillingDefault"
+                    ng-model="accountPreferences.accountBillingDefault"
+                     />
+            <div ng-show="editForm.accountBillingDefault.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountBillingDefault.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="bbillingApp.accountPreferences.accounts" for="field_accounts">accounts</label>
+            <select class="form-control" id="field_accounts" name="accounts" ng-model="accountPreferences.accountsId" ng-options="accounts.id as accounts.accountNumber for accounts in accountss">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

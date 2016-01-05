@@ -1,0 +1,163 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "products",
+            "otherEntityName": "products",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "productName",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "accounts"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "branch",
+            "otherEntityName": "branch",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "branchName"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "bank",
+            "otherEntityName": "bank",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "bankName"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "countryName"
+        },
+        {
+            "relationshipId": 5,
+            "relationshipName": "currency",
+            "otherEntityName": "currency",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "currencyDescription"
+        },
+        {
+            "relationshipId": 6,
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "customerID"
+        },
+        {
+            "relationshipId": 7,
+            "relationshipName": "accountFamily",
+            "otherEntityName": "accountFamily",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "accountFamilyDesc"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "accountNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "accountType",
+            "fieldType": "AccountType",
+            "fieldValues": "CA, SA, OD",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "accountOpenedDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "accountClosedDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "accountStatus",
+            "fieldType": "AccountStatus",
+            "fieldValues": "ACTIVE, INACTIVE, DORMANT, CLOSED, OPENED, COLLECTION",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "accountCRTurnOver",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "accountDRTurnOver",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "accountAvailBal",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "accountLedgerBal",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "accountBalance",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "accountLastBalType",
+            "fieldType": "AccountLastBalType",
+            "fieldValues": "CR,DR",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "accountTier",
+            "fieldType": "AccountTier",
+            "fieldValues": "TIER0, TIER1, TIER2, TIER3, TIER4",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "accountChargingBal",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20151031110110",
+    "dto": "mapstruct",
+    "pagination": "pagination"
+}

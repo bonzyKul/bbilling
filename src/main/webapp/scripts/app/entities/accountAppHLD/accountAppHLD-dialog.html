@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAccountAppHLDLabel" translate="bbillingApp.accountAppHLD.home.createOrEditLabel">Create or edit a AccountAppHLD</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="accountAppHLD.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountAppHLD.appHLDStartDate" for="field_appHLDStartDate">AppHLDStartDate</label>
+            <input type="date" class="form-control" name="appHLDStartDate" id="field_appHLDStartDate"
+                    ng-model="accountAppHLD.appHLDStartDate"
+                    required />
+            <div ng-show="editForm.appHLDStartDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.appHLDStartDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountAppHLD.appHLDEndDate" for="field_appHLDEndDate">AppHLDEndDate</label>
+            <input type="date" class="form-control" name="appHLDEndDate" id="field_appHLDEndDate"
+                    ng-model="accountAppHLD.appHLDEndDate"
+                    required />
+            <div ng-show="editForm.appHLDEndDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.appHLDEndDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="bbillingApp.accountAppHLD.accounts" for="field_accounts">accounts</label>
+            <select class="form-control" id="field_accounts" name="accounts" ng-model="accountAppHLD.accountsId" ng-options="accounts.id as accounts.accountNumber for accounts in accountss">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accountAppHLD.products" for="field_products">products</label>
+            <select class="form-control" id="field_products" name="products" ng-model="accountAppHLD.productsId" ng-options="products.id as products.productName for products in productss">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

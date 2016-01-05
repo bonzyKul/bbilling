@@ -1,0 +1,25 @@
+{
+    "bbillingApp": {
+        "pricingTier" : {
+            "home": {
+                "title": "PricingTiers",
+                "createLabel": "Créer un nouveau PricingTier",
+                "createOrEditLabel": "Créer ou éditer un PricingTier"
+            },
+            "created": "Un nouveau PricingTier a été créé avec l'identifiant {{ param }}",
+            "updated": "Le PricingTier avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le PricingTier avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le PricingTier {{ id }} ?"
+            },
+            "detail": {
+                "title": "PricingTier"
+            },
+            "pricingTierFrom": "PricingTierFrom",
+            "pricingTierTo": "PricingTierTo",
+            "pricingTierValue": "PricingTierValue",
+            "pricing": "Pricing"
+        }
+    }
+}
+

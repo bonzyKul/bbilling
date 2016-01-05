@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "baseName": "bbilling",
+    "packageName": "com.barclays.bbilling",
+    "packageFolder": "com/barclays/bbilling",
+    "authenticationType": "oauth2",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": "hazelcast",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "oracle",
+    "searchEngine": "elasticsearch",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "0a726777dba51978527e39bbf6230b22b56dac4f",
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ]
+  }
+}

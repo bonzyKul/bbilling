@@ -1,0 +1,27 @@
+{
+    "bbillingApp": {
+        "serviceCatalogue" : {
+            "home": {
+                "title": "ServiceCatalogues",
+                "createLabel": "Créer un nouveau ServiceCatalogue",
+                "createOrEditLabel": "Créer ou éditer un ServiceCatalogue"
+            },
+            "created": "Un nouveau ServiceCatalogue a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ServiceCatalogue avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ServiceCatalogue avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ServiceCatalogue {{ id }} ?"
+            },
+            "detail": {
+                "title": "ServiceCatalogue"
+            },
+            "serviceCode": "ServiceCode",
+            "serviceDescription": "ServiceDescription",
+            "serviceStartDate": "ServiceStartDate",
+            "serviceEndDate": "ServiceEndDate",
+            "products": "Products",
+            "pricing": "Pricing"
+        }
+    }
+}
+

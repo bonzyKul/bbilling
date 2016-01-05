@@ -1,0 +1,238 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAccountsLabel" translate="bbillingApp.accounts.home.createOrEditLabel">Create or edit a Accounts</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="accounts.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountNumber" for="field_accountNumber">AccountNumber</label>
+            <input type="text" class="form-control" name="accountNumber" id="field_accountNumber"
+                    ng-model="accounts.accountNumber"
+                    required ng-minlength="1" ng-maxlength="100" />
+            <div ng-show="editForm.accountNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountNumber.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.accountNumber.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.accountNumber.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountType" for="field_accountType">AccountType</label>
+            <select class="form-control" name="accountType" ng-model="accounts.accountType" id="field_accountType" required>
+                <option value="CA" translate="bbillingApp.AccountType.CA">CA</option>
+                <option value="SA" translate="bbillingApp.AccountType.SA">SA</option>
+                <option value="OD" translate="bbillingApp.AccountType.OD">OD</option>
+            </select>
+            <div ng-show="editForm.accountType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountType.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountOpenedDate" for="field_accountOpenedDate">AccountOpenedDate</label>
+            <input type="date" class="form-control" name="accountOpenedDate" id="field_accountOpenedDate"
+                    ng-model="accounts.accountOpenedDate"
+                    required />
+            <div ng-show="editForm.accountOpenedDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountOpenedDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountClosedDate" for="field_accountClosedDate">AccountClosedDate</label>
+            <input type="date" class="form-control" name="accountClosedDate" id="field_accountClosedDate"
+                    ng-model="accounts.accountClosedDate"
+                    required />
+            <div ng-show="editForm.accountClosedDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountClosedDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountStatus" for="field_accountStatus">AccountStatus</label>
+            <select class="form-control" name="accountStatus" ng-model="accounts.accountStatus" id="field_accountStatus" required>
+                <option value="ACTIVE" translate="bbillingApp.AccountStatus.ACTIVE">ACTIVE</option>
+                <option value="INACTIVE" translate="bbillingApp.AccountStatus.INACTIVE">INACTIVE</option>
+                <option value="DORMANT" translate="bbillingApp.AccountStatus.DORMANT">DORMANT</option>
+                <option value="CLOSED" translate="bbillingApp.AccountStatus.CLOSED">CLOSED</option>
+                <option value="OPENED" translate="bbillingApp.AccountStatus.OPENED">OPENED</option>
+                <option value="COLLECTION" translate="bbillingApp.AccountStatus.COLLECTION">COLLECTION</option>
+            </select>
+            <div ng-show="editForm.accountStatus.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountStatus.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountCRTurnOver" for="field_accountCRTurnOver">AccountCRTurnOver</label>
+            <input type="number" class="form-control" name="accountCRTurnOver" id="field_accountCRTurnOver"
+                    ng-model="accounts.accountCRTurnOver"
+                    required />
+            <div ng-show="editForm.accountCRTurnOver.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountCRTurnOver.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.accountCRTurnOver.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountDRTurnOver" for="field_accountDRTurnOver">AccountDRTurnOver</label>
+            <input type="number" class="form-control" name="accountDRTurnOver" id="field_accountDRTurnOver"
+                    ng-model="accounts.accountDRTurnOver"
+                    required />
+            <div ng-show="editForm.accountDRTurnOver.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountDRTurnOver.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.accountDRTurnOver.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountAvailBal" for="field_accountAvailBal">AccountAvailBal</label>
+            <input type="number" class="form-control" name="accountAvailBal" id="field_accountAvailBal"
+                    ng-model="accounts.accountAvailBal"
+                    required />
+            <div ng-show="editForm.accountAvailBal.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountAvailBal.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.accountAvailBal.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountLedgerBal" for="field_accountLedgerBal">AccountLedgerBal</label>
+            <input type="number" class="form-control" name="accountLedgerBal" id="field_accountLedgerBal"
+                    ng-model="accounts.accountLedgerBal"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountBalance" for="field_accountBalance">AccountBalance</label>
+            <input type="number" class="form-control" name="accountBalance" id="field_accountBalance"
+                    ng-model="accounts.accountBalance"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountLastBalType" for="field_accountLastBalType">AccountLastBalType</label>
+            <select class="form-control" name="accountLastBalType" ng-model="accounts.accountLastBalType" id="field_accountLastBalType" required>
+                <option value="CR" translate="bbillingApp.AccountLastBalType.CR">CR</option>
+                <option value="DR" translate="bbillingApp.AccountLastBalType.DR">DR</option>
+            </select>
+            <div ng-show="editForm.accountLastBalType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountLastBalType.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountTier" for="field_accountTier">AccountTier</label>
+            <select class="form-control" name="accountTier" ng-model="accounts.accountTier" id="field_accountTier" required>
+                <option value="TIER0" translate="bbillingApp.AccountTier.TIER0">TIER0</option>
+                <option value="TIER1" translate="bbillingApp.AccountTier.TIER1">TIER1</option>
+                <option value="TIER2" translate="bbillingApp.AccountTier.TIER2">TIER2</option>
+                <option value="TIER3" translate="bbillingApp.AccountTier.TIER3">TIER3</option>
+                <option value="TIER4" translate="bbillingApp.AccountTier.TIER4">TIER4</option>
+            </select>
+            <div ng-show="editForm.accountTier.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.accountTier.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountChargingBal" for="field_accountChargingBal">AccountChargingBal</label>
+            <input type="number" class="form-control" name="accountChargingBal" id="field_accountChargingBal"
+                    ng-model="accounts.accountChargingBal"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.products" for="field_products">products</label>
+            <select class="form-control" id="field_products" name="products" ng-model="accounts.productsId" ng-options="products.id as products.productName for products in productss | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.branch" for="field_branch">branch</label>
+            <select class="form-control" id="field_branch" name="branch" ng-model="accounts.branchId" ng-options="branch.id as branch.branchName for branch in branchs">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.bank" for="field_bank">bank</label>
+            <select class="form-control" id="field_bank" name="bank" ng-model="accounts.bankId" ng-options="bank.id as bank.bankName for bank in banks">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.country" for="field_country">country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="accounts.countryId" ng-options="country.id as country.countryName for country in countrys">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.currency" for="field_currency">currency</label>
+            <select class="form-control" id="field_currency" name="currency" ng-model="accounts.currencyId" ng-options="currency.id as currency.currencyDescription for currency in currencys">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.customer" for="field_customer">customer</label>
+            <select class="form-control" id="field_customer" name="customer" ng-model="accounts.customerId" ng-options="customer.id as customer.customerID for customer in customers">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.accounts.accountFamily" for="field_accountFamily">accountFamily</label>
+            <select class="form-control" id="field_accountFamily" name="accountFamily" ng-model="accounts.accountFamilyId" ng-options="accountFamily.id as accountFamily.accountFamilyDesc for accountFamily in accountfamilys">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

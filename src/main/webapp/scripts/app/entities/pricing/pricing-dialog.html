@@ -1,0 +1,169 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPricingLabel" translate="bbillingApp.pricing.home.createOrEditLabel">Create or edit a Pricing</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="pricing.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingType" for="field_pricingType">PricingType</label>
+            <select class="form-control" name="pricingType" ng-model="pricing.pricingType" id="field_pricingType" required>
+                <option value="FLAT_SIMPLE" translate="bbillingApp.PricingType.FLAT_SIMPLE">FLAT_SIMPLE</option>
+                <option value="UNIT_SIMPLE" translate="bbillingApp.PricingType.UNIT_SIMPLE">UNIT_SIMPLE</option>
+                <option value="UNIT_TIERED" translate="bbillingApp.PricingType.UNIT_TIERED">UNIT_TIERED</option>
+                <option value="UNIT_THRESHOLD" translate="bbillingApp.PricingType.UNIT_THRESHOLD">UNIT_THRESHOLD</option>
+                <option value="FLAT_THRESHOLD" translate="bbillingApp.PricingType.FLAT_THRESHOLD">FLAT_THRESHOLD</option>
+            </select>
+            <div ng-show="editForm.pricingType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingType.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingChargeAmount" for="field_pricingChargeAmount">PricingChargeAmount</label>
+            <input type="number" class="form-control" name="pricingChargeAmount" id="field_pricingChargeAmount"
+                    ng-model="pricing.pricingChargeAmount"
+                    required />
+            <div ng-show="editForm.pricingChargeAmount.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingChargeAmount.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pricingChargeAmount.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingRateType" for="field_pricingRateType">PricingRateType</label>
+            <select class="form-control" name="pricingRateType" ng-model="pricing.pricingRateType" id="field_pricingRateType" required>
+                <option value="FLAT" translate="bbillingApp.PricingRateType.FLAT">FLAT</option>
+                <option value="PERCENTAGE" translate="bbillingApp.PricingRateType.PERCENTAGE">PERCENTAGE</option>
+            </select>
+            <div ng-show="editForm.pricingRateType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingRateType.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingUnit" for="field_pricingUnit">PricingUnit</label>
+            <input type="number" class="form-control" name="pricingUnit" id="field_pricingUnit"
+                    ng-model="pricing.pricingUnit"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingStartDate" for="field_pricingStartDate">PricingStartDate</label>
+            <input type="date" class="form-control" name="pricingStartDate" id="field_pricingStartDate"
+                    ng-model="pricing.pricingStartDate"
+                    required />
+            <div ng-show="editForm.pricingStartDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingStartDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingEndDate" for="field_pricingEndDate">PricingEndDate</label>
+            <input type="date" class="form-control" name="pricingEndDate" id="field_pricingEndDate"
+                    ng-model="pricing.pricingEndDate"
+                    required />
+            <div ng-show="editForm.pricingEndDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingEndDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingUnitType" for="field_pricingUnitType">PricingUnitType</label>
+            <select class="form-control" name="pricingUnitType" ng-model="pricing.pricingUnitType" id="field_pricingUnitType" required>
+                <option value="VALUE" translate="bbillingApp.PricingUnitType.VALUE">VALUE</option>
+                <option value="COUNT" translate="bbillingApp.PricingUnitType.COUNT">COUNT</option>
+            </select>
+            <div ng-show="editForm.pricingUnitType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingUnitType.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingAmountType" for="field_pricingAmountType">PricingAmountType</label>
+            <select class="form-control" name="pricingAmountType" ng-model="pricing.pricingAmountType" id="field_pricingAmountType" required>
+                <option value="CR" translate="bbillingApp.PricingAmountType.CR">CR</option>
+                <option value="DR" translate="bbillingApp.PricingAmountType.DR">DR</option>
+            </select>
+            <div ng-show="editForm.pricingAmountType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingAmountType.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingForStaff" for="field_pricingForStaff">PricingForStaff</label>
+            <input type="checkbox" class="form-control" name="pricingForStaff" id="field_pricingForStaff"
+                    ng-model="pricing.pricingForStaff"
+                     />
+            <div ng-show="editForm.pricingForStaff.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingForStaff.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.pricingTaxIndicator" for="field_pricingTaxIndicator">PricingTaxIndicator</label>
+            <input type="checkbox" class="form-control" name="pricingTaxIndicator" id="field_pricingTaxIndicator"
+                    ng-model="pricing.pricingTaxIndicator"
+                     />
+            <div ng-show="editForm.pricingTaxIndicator.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pricingTaxIndicator.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.products" for="field_products">products</label>
+            <select class="form-control" id="field_products" name="products" ng-model="pricing.productsId" ng-options="products.id as products.productCode for products in productss">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.currency" for="field_currency">currency</label>
+            <select class="form-control" id="field_currency" name="currency" ng-model="pricing.currencyId" ng-options="currency.id as currency.currencyCode for currency in currencys">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="bbillingApp.pricing.serviceCatalogue" for="field_serviceCatalogue">serviceCatalogue</label>
+            <select class="form-control" id="field_serviceCatalogue" name="serviceCatalogue" ng-model="pricing.serviceCatalogueId" ng-options="serviceCatalogue.id as serviceCatalogue.serviceCode for serviceCatalogue in servicecatalogues">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
